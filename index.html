@@ -60,6 +60,10 @@
         <circle cx="200" cy="200" r="170" fill="none" stroke="currentColor" stroke-width="0.5"/>
         <text x="200" y="232" text-anchor="middle" font-family="Fraunces, serif" font-size="140" fill="currentColor">DK</text>
       </svg>
+      <svg class="hero-sparkline" id="heroSparkline" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+        <polyline points="40,300 90,270 130,290 175,220 220,240 260,160 300,190 340,100"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
     </div>
   </section>
 
@@ -151,7 +155,7 @@
     </div>
   </section>
 
-  <section id="projects" class="section">
+  <section id="projects" class="section projects-section">
     <div class="section-inner">
       <p class="section-label reveal">III. &mdash; Selected Work</p>
       <h2 class="reveal">Finance Projects</h2>
@@ -161,7 +165,38 @@
           <span class="card-tag">Equity Research</span>
           <h3>Equity Valuation &amp; DCF Analysis &mdash; Johnson &amp; Johnson (JNJ)</h3>
           <p>Full DCF valuation using a 5.8% WACC and 2.0% terminal growth rate, arriving at an intrinsic value of $224/share (27% upside) and a formal Buy recommendation.</p>
-          <p>Built and stress-tested a multi-scenario financial model, presented to faculty and peers in a team-based equity analysis format.</p>
+
+          <div class="viz heatmap" role="img" aria-label="Sensitivity table showing intrinsic value per share across a range of WACC and terminal growth assumptions, centered on the base case of $224 per share at 5.8% WACC and 2.0% terminal growth.">
+            <div class="heat-row heat-head">
+              <div class="heat-cell heat-corner">WACC&nbsp;\&nbsp;g</div>
+              <div class="heat-cell heat-label">1.5%</div>
+              <div class="heat-cell heat-label">1.75%</div>
+              <div class="heat-cell heat-label">2.0%</div>
+              <div class="heat-cell heat-label">2.25%</div>
+              <div class="heat-cell heat-label">2.5%</div>
+            </div>
+            <div class="heat-row">
+              <div class="heat-cell heat-label">5.3%</div>
+              <div class="heat-cell v3">$223</div><div class="heat-cell v4">$239</div><div class="heat-cell v4">$258</div><div class="heat-cell v5">$280</div><div class="heat-cell v5">$306</div>
+            </div>
+            <div class="heat-row">
+              <div class="heat-cell heat-label">5.55%</div>
+              <div class="heat-cell v2">$209</div><div class="heat-cell v3">$224</div><div class="heat-cell v4">$240</div><div class="heat-cell v5">$259</div><div class="heat-cell v5">$280</div>
+            </div>
+            <div class="heat-row">
+              <div class="heat-cell heat-label">5.8%</div>
+              <div class="heat-cell v1">$197</div><div class="heat-cell v2">$210</div><div class="heat-cell v3 heat-base">$224</div><div class="heat-cell v4">$240</div><div class="heat-cell v5">$259</div>
+            </div>
+            <div class="heat-row">
+              <div class="heat-cell heat-label">6.05%</div>
+              <div class="heat-cell v1">$186</div><div class="heat-cell v1">$198</div><div class="heat-cell v2">$210</div><div class="heat-cell v3">$224</div><div class="heat-cell v4">$241</div>
+            </div>
+            <div class="heat-row">
+              <div class="heat-cell heat-label">6.3%</div>
+              <div class="heat-cell v1">$176</div><div class="heat-cell v1">$187</div><div class="heat-cell v2">$198</div><div class="heat-cell v2">$211</div><div class="heat-cell v3">$225</div>
+            </div>
+          </div>
+          <p class="viz-caption">Sensitivity of intrinsic value ($/share) to WACC &amp; terminal growth, anchored to the base case.</p>
         </article>
 
         <article class="card reveal">
@@ -169,19 +204,54 @@
           <h3>Portfolio Construction &amp; Factor Modeling</h3>
           <p>Implemented CAPM and Fama-French 5-Factor models across 20+ years of monthly equity data to estimate risk exposures and evaluate portfolio performance.</p>
           <p>Built 49 value-weighted industry portfolios and applied PCA to identify diversification drivers and factor-driven return predictability.</p>
+
+          <div class="viz factor-viz" role="img" aria-label="Diagram of the model structure: 49 value-weighted industry portfolios mapped against the Fama-French five factors.">
+            <div class="dot-grid" id="dotGrid" aria-hidden="true"></div>
+            <div class="factor-pentagon">
+              <svg viewBox="0 0 200 190" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="100,10 190,75 155,180 45,180 10,75" fill="none" stroke="currentColor" stroke-width="1"/>
+                <polygon points="100,55 152,90 133,148 67,148 48,90" fill="none" stroke="currentColor" stroke-width="0.75" opacity="0.6"/>
+              </svg>
+              <span class="fp-label fp-1">Mkt-RF</span>
+              <span class="fp-label fp-2">SMB</span>
+              <span class="fp-label fp-3">HML</span>
+              <span class="fp-label fp-4">RMW</span>
+              <span class="fp-label fp-5">CMA</span>
+            </div>
+          </div>
+          <p class="viz-caption">Model structure &mdash; 49 industry portfolios mapped across the Fama-French five factors.</p>
         </article>
 
         <article class="card reveal">
           <span class="card-tag">Research</span>
           <h3>Budgetary Controls &amp; Organizational Performance</h3>
-          <p>Analyzed financial data from 10+ organizations, finding a strong positive correlation (r = 0.62) between effective budgeting and financial outcomes.</p>
+          <p>Analyzed financial data from 10+ organizations, finding a strong positive correlation (r = 0.62, p &lt; 0.01) between effective budgeting and financial outcomes.</p>
           <p>Presented findings at the International Virtual Conference, Dyal Singh College (April 2023).</p>
+
+          <div class="viz research-viz">
+            <div class="bar-chart" role="img" aria-label="Bar chart comparing financial performance scores: nine out of ten for a company with effective budgeting policies, versus five out of ten for a company with no established budgeting policy.">
+              <div class="bar-group">
+                <div class="bar" style="--val:90%;"><span class="bar-value">9</span></div>
+                <span class="bar-label">Effective<br>Budgeting</span>
+              </div>
+              <div class="bar-group">
+                <div class="bar bar-muted" style="--val:50%;"><span class="bar-value">5</span></div>
+                <span class="bar-label">No Budgeting<br>Policy</span>
+              </div>
+            </div>
+            <div class="corr-stat">
+              <span class="corr-number" data-target="0.62">0.00</span>
+              <span class="corr-sub">Pearson r &middot; p &lt; 0.01</span>
+            </div>
+          </div>
+          <p class="viz-caption">Financial performance index (Table 1) and budgeting &ndash; performance correlation (Table 2) from the original study.</p>
+          <a href="TERM_PAPER_Dhruv_Kothari.docx" class="card-link" data-magnetic download>Read the Full Paper &rarr;</a>
         </article>
       </div>
     </div>
   </section>
 
-  <section id="education" class="section alt">
+  <section id="education" class="section alt education-section">
     <div class="section-inner">
       <p class="section-label reveal">IV. &mdash; Background</p>
       <h2 class="reveal">Education</h2>
@@ -268,6 +338,17 @@
 </main>
 
 <footer class="footer">
+  <svg class="laurel" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="currentColor" stroke-width="1">
+      <path d="M90 30 C 70 10, 40 10, 25 30 C 40 25, 60 28, 90 34"/>
+      <path d="M80 20 C 65 8, 45 8, 32 22"/>
+      <path d="M85 40 C 65 48, 42 46, 28 32"/>
+      <path d="M110 30 C 130 10, 160 10, 175 30 C 160 25, 140 28, 110 34"/>
+      <path d="M120 20 C 135 8, 155 8, 168 22"/>
+      <path d="M115 40 C 135 48, 158 46, 172 32"/>
+    </g>
+    <text x="100" y="35" text-anchor="middle" font-family="Fraunces, serif" font-size="14" fill="currentColor">DK</text>
+  </svg>
   <p>&copy; <span id="year"></span> Dhruv Kothari. Built with intent, not a template.</p>
 </footer>
 

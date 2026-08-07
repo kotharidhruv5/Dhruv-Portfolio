@@ -34,6 +34,39 @@ revealEls.forEach(el => observer.observe(el));
 // Footer year
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// Populate 49-dot grid (industry portfolios) for factor model viz
+const dotGrid = document.getElementById('dotGrid');
+if (dotGrid) {
+  for (let i = 0; i < 49; i++) {
+    const dot = document.createElement('span');
+    dot.className = 'dot';
+    dotGrid.appendChild(dot);
+  }
+}
+
+// Count-up animation for correlation stat
+const corrEls = document.querySelectorAll('.corr-number');
+if (corrEls.length) {
+  const corrObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseFloat(el.dataset.target);
+        const duration = 1400;
+        const start = performance.now();
+        function tick(now) {
+          const progress = Math.min((now - start) / duration, 1);
+          el.textContent = (target * progress).toFixed(2);
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+        corrObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.4 });
+  corrEls.forEach(el => corrObserver.observe(el));
+}
+
 // --- Custom cursor (desktop / fine-pointer only) ---
 const isFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
