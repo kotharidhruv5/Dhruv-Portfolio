@@ -691,6 +691,7 @@ ul { list-style: none; }
 
 .hero-figure { position: absolute; right: -6%; top: 50%; transform: translateY(-50%); width: 480px; max-width: 55vw; pointer-events: none; }
 .hero-monogram { position: absolute; inset: 0; width: 100%; height: auto; opacity: 0.14; color: var(--gold); }
+.hero-building { position: absolute; inset: 0; width: 112%; height: auto; top: 8%; left: -6%; opacity: 0.16; color: var(--gold-bright); }
 
 /* SECTION WATERMARKS */
 .projects-section { position: relative; overflow: hidden; }
@@ -900,6 +901,42 @@ ul { list-style: none; }
 
 .card-link:hover { color: var(--gold-bright); border-color: var(--gold); }
 
+/* ABOUT LAYOUT + BULL EMBLEM */
+.about-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.about-copy { flex: 1; min-width: 280px; }
+
+.bull-emblem {
+  width: 160px;
+  height: auto;
+  color: var(--gold);
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+/* CONTACT HEADER + WAX SEAL */
+.contact-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.wax-seal {
+  width: 100px;
+  height: auto;
+  color: var(--gold);
+  flex-shrink: 0;
+  opacity: 0.9;
+}
+
 /* ADDITIONAL SECTION WATERMARKS */
 #skills { position: relative; overflow: hidden; }
 
@@ -972,6 +1009,10 @@ ul { list-style: none; }
 
   .factor-viz { flex-direction: column; }
   .research-viz { flex-direction: column; align-items: flex-start; }
+
+  .bull-emblem { width: 90px; margin: 0 auto; }
+  .about-layout { flex-direction: column-reverse; text-align: left; }
+  .wax-seal { width: 64px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
