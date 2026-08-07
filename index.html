@@ -6,23 +6,30 @@
 <title>Dhruv Kothari | Finance & Portfolio Management</title>
 <meta name="description" content="Dhruv Kothari — MS Finance Candidate, CFA Level 1 Candidate. Portfolio management, equity valuation, and financial analysis.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,500&family=Cormorant+Garamond:ital,wght@0,500;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
 
 <div class="progress-bar" id="progressBar"></div>
 
 <header class="nav">
   <div class="nav-inner">
-    <a href="#home" class="logo">DK</a>
+    <a href="#home" class="logo">
+      <span class="logo-mark">DK</span>
+      <span class="logo-full">Dhruv Kothari</span>
+    </a>
     <nav class="nav-links" id="navLinks">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#education">Education</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact" class="nav-cta">Contact</a>
+      <a href="#about" data-magnetic>About</a>
+      <a href="#experience" data-magnetic>Experience</a>
+      <a href="#projects" data-magnetic>Projects</a>
+      <a href="#education" data-magnetic>Education</a>
+      <a href="#skills" data-magnetic>Skills</a>
+      <a href="#contact" class="nav-cta" data-magnetic>Contact</a>
     </nav>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
@@ -34,29 +41,55 @@
 
   <section class="hero">
     <div class="hero-inner">
-      <p class="eyebrow reveal">Tempe, Arizona</p>
-      <h1 class="reveal">Dhruv Kothari</h1>
-      <p class="hero-tagline reveal">MS Finance Candidate &middot; CFA Level 1 Candidate</p>
-      <p class="hero-sub reveal">Focused on portfolio management, equity valuation, and wealth management — building financial models that hold up under pressure.</p>
+      <p class="eyebrow reveal">Tempe, Arizona &nbsp;&mdash;&nbsp; Est. 2026</p>
+      <h1 class="reveal">
+        <span class="hero-first">Dhruv</span>
+        <span class="hero-last">Kothari</span>
+      </h1>
+      <p class="hero-tagline reveal"><em>MS Finance Candidate &middot; CFA Level 1 Candidate</em></p>
+      <p class="hero-sub reveal">Focused on portfolio management, equity valuation, and wealth management &mdash; building financial models that hold up under pressure.</p>
       <div class="hero-actions reveal">
-        <a href="#projects" class="btn btn-primary">View Projects</a>
-        <a href="#contact" class="btn btn-ghost">Get in Touch</a>
-        <a href="Dhruv_Kothari_Resume.pdf" class="btn btn-ghost" download>Download Resume</a>
+        <a href="#projects" class="btn btn-primary" data-magnetic>View Projects</a>
+        <a href="#contact" class="btn btn-ghost" data-magnetic>Get in Touch</a>
+        <a href="Dhruv_Kothari_Resume.pdf" class="btn btn-ghost" data-magnetic download>Download Resume</a>
       </div>
     </div>
     <div class="hero-figure" aria-hidden="true">
-      <div class="ticker-line" id="tickerLine"></div>
+      <svg class="hero-monogram" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="200" cy="200" r="196" fill="none" stroke="currentColor" stroke-width="1"/>
+        <circle cx="200" cy="200" r="170" fill="none" stroke="currentColor" stroke-width="0.5"/>
+        <text x="200" y="232" text-anchor="middle" font-family="Fraunces, serif" font-size="140" fill="currentColor">DK</text>
+      </svg>
     </div>
   </section>
 
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>PORTFOLIO MANAGEMENT</span><span>&#9670;</span>
+      <span>EQUITY VALUATION</span><span>&#9670;</span>
+      <span>DCF MODELING</span><span>&#9670;</span>
+      <span>CFA LEVEL 1 CANDIDATE</span><span>&#9670;</span>
+      <span>FACTOR MODELS</span><span>&#9670;</span>
+      <span>RISK MANAGEMENT</span><span>&#9670;</span>
+      <span>WEALTH MANAGEMENT</span><span>&#9670;</span>
+      <span>PORTFOLIO MANAGEMENT</span><span>&#9670;</span>
+      <span>EQUITY VALUATION</span><span>&#9670;</span>
+      <span>DCF MODELING</span><span>&#9670;</span>
+      <span>CFA LEVEL 1 CANDIDATE</span><span>&#9670;</span>
+      <span>FACTOR MODELS</span><span>&#9670;</span>
+      <span>RISK MANAGEMENT</span><span>&#9670;</span>
+      <span>WEALTH MANAGEMENT</span><span>&#9670;</span>
+    </div>
+  </div>
+
   <section id="about" class="section">
     <div class="section-inner">
-      <p class="section-label reveal">About</p>
+      <p class="section-label reveal">I. &mdash; About</p>
       <h2 class="reveal">A finance mind that likes proof, not just opinions</h2>
       <p class="section-text reveal">
         I'm an MS Finance candidate at Arizona State University's W.P. Carey School of Business, currently
         pursuing CFA Level 1. My work spans corporate finance operations, equity research, and quantitative
-        portfolio construction — from cutting reporting time on an $11M+ IT budget by half, to building
+        portfolio construction &mdash; from cutting reporting time on an $11M+ IT budget by half, to building
         factor models across two decades of equity data in Python. I care about turning messy financial
         data into decisions people can actually act on.
       </p>
@@ -65,13 +98,14 @@
 
   <section id="experience" class="section alt">
     <div class="section-inner">
-      <p class="section-label reveal">Experience</p>
+      <p class="section-label reveal">II. &mdash; Experience</p>
       <h2 class="reveal">Professional Experience</h2>
 
       <div class="timeline">
         <article class="timeline-item reveal">
           <div class="timeline-meta">
-            <span class="timeline-date">Sep 2024 – Mar 2025</span>
+            <span class="timeline-index">01</span>
+            <span class="timeline-date">Sep 2024 &mdash; Mar 2025</span>
           </div>
           <div class="timeline-content">
             <h3>Finance &amp; Operations Intern</h3>
@@ -87,7 +121,8 @@
 
         <article class="timeline-item reveal">
           <div class="timeline-meta">
-            <span class="timeline-date">Feb 2023 – Mar 2023</span>
+            <span class="timeline-index">02</span>
+            <span class="timeline-date">Feb 2023 &mdash; Mar 2023</span>
           </div>
           <div class="timeline-content">
             <h3>Finance Intern</h3>
@@ -101,10 +136,11 @@
 
         <article class="timeline-item reveal">
           <div class="timeline-meta">
+            <span class="timeline-index">03</span>
             <span class="timeline-date">Fall 2026</span>
           </div>
           <div class="timeline-content">
-            <h3>Member (Incoming) — Masters SIM Fund</h3>
+            <h3>Member (Incoming) &mdash; Masters SIM Fund</h3>
             <p class="timeline-org">ASU W.P. Carey School of Business</p>
             <ul>
               <li>Selected to manage a portion of ASU's actively managed equity portfolio, conducting equity research and contributing to portfolio construction and investment decision-making.</li>
@@ -117,13 +153,13 @@
 
   <section id="projects" class="section">
     <div class="section-inner">
-      <p class="section-label reveal">Selected Work</p>
+      <p class="section-label reveal">III. &mdash; Selected Work</p>
       <h2 class="reveal">Finance Projects</h2>
 
       <div class="cards">
         <article class="card reveal">
           <span class="card-tag">Equity Research</span>
-          <h3>Equity Valuation &amp; DCF Analysis — Johnson &amp; Johnson (JNJ)</h3>
+          <h3>Equity Valuation &amp; DCF Analysis &mdash; Johnson &amp; Johnson (JNJ)</h3>
           <p>Full DCF valuation using a 5.8% WACC and 2.0% terminal growth rate, arriving at an intrinsic value of $224/share (27% upside) and a formal Buy recommendation.</p>
           <p>Built and stress-tested a multi-scenario financial model, presented to faculty and peers in a team-based equity analysis format.</p>
         </article>
@@ -147,12 +183,12 @@
 
   <section id="education" class="section alt">
     <div class="section-inner">
-      <p class="section-label reveal">Background</p>
+      <p class="section-label reveal">IV. &mdash; Background</p>
       <h2 class="reveal">Education</h2>
 
       <div class="edu-grid">
         <div class="edu-item reveal">
-          <span class="edu-date">2025 – 2026</span>
+          <span class="edu-date">2025 &mdash; 2026</span>
           <h3>Master of Science in Finance</h3>
           <p class="edu-org">W.P. Carey School of Business, Arizona State University &middot; GPA 3.66/4.0</p>
           <p class="edu-detail">Investment Management, Fixed Income, Quantitative Methods, Accountancy, Managerial Finance, Risk Management, Entrepreneurial Finance</p>
@@ -167,14 +203,14 @@
 
       <div class="cert-row reveal">
         <span class="cert-pill">CFA Level 1 Candidate</span>
-        <span class="cert-pill">National Cadet Corps 'C' Certificate — Mar 2022</span>
+        <span class="cert-pill">National Cadet Corps 'C' Certificate &mdash; Mar 2022</span>
       </div>
     </div>
   </section>
 
   <section id="skills" class="section">
     <div class="section-inner">
-      <p class="section-label reveal">Toolkit</p>
+      <p class="section-label reveal">V. &mdash; Toolkit</p>
       <h2 class="reveal">Skills</h2>
 
       <div class="skills-grid">
@@ -207,9 +243,9 @@
         <div class="skill-group reveal">
           <h3>Languages</h3>
           <div class="tags">
-            <span>English — Fluent</span>
-            <span>Hindi — Fluent</span>
-            <span>Kannada — Conversational</span>
+            <span>English &mdash; Fluent</span>
+            <span>Hindi &mdash; Fluent</span>
+            <span>Kannada &mdash; Conversational</span>
           </div>
         </div>
       </div>
@@ -218,13 +254,13 @@
 
   <section id="contact" class="section alt contact-section">
     <div class="section-inner">
-      <p class="section-label reveal">Get in touch</p>
+      <p class="section-label reveal">VI. &mdash; Get in touch</p>
       <h2 class="reveal">Let's talk finance</h2>
       <p class="section-text reveal">Open to internships, research collaborations, and roles in portfolio management or wealth management.</p>
       <div class="contact-links reveal">
-        <a href="mailto:Kotharidhruv5@gmail.com" class="contact-link">Kotharidhruv5@gmail.com</a>
-        <a href="tel:+14152838065" class="contact-link">(415) 283-8065</a>
-        <a href="https://www.linkedin.com/in/dhruv-kothari-678446226" class="contact-link" id="linkedinLink" target="_blank" rel="noopener">LinkedIn Profile</a>
+        <a href="mailto:Kotharidhruv5@gmail.com" class="contact-link" data-magnetic>Kotharidhruv5@gmail.com</a>
+        <a href="tel:+14152838065" class="contact-link" data-magnetic>(415) 283-8065</a>
+        <a href="https://www.linkedin.com/in/dhruv-kothari-678446226" class="contact-link" id="linkedinLink" target="_blank" rel="noopener" data-magnetic>LinkedIn Profile</a>
       </div>
     </div>
   </section>
