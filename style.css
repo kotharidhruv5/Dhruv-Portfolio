@@ -21,7 +21,12 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: var(--bg);
+  background:
+    radial-gradient(ellipse 1200px 700px at 15% -10%, rgba(195, 160, 74, 0.09), transparent 60%),
+    radial-gradient(ellipse 900px 600px at 100% 20%, rgba(195, 160, 74, 0.05), transparent 55%),
+    radial-gradient(ellipse 800px 500px at 90% 100%, rgba(195, 160, 74, 0.045), transparent 55%),
+    repeating-linear-gradient(135deg, rgba(236, 229, 214, 0.012) 0 1px, transparent 1px 3px),
+    var(--bg);
   color: var(--ink);
   font-family: var(--sans);
   line-height: 1.65;
@@ -200,6 +205,32 @@ ul { list-style: none; }
   margin: 0 auto;
   padding: 40px 24px;
   overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -10%;
+  width: 900px;
+  height: 900px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  background-image: repeating-radial-gradient(circle at center, rgba(195, 160, 74, 0.05) 0 1px, transparent 1px 46px);
+  mask-image: radial-gradient(circle at center, black 0%, transparent 70%);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  left: -8%;
+  bottom: -20%;
+  width: 480px;
+  height: 480px;
+  pointer-events: none;
+  background-image: repeating-conic-gradient(from 0deg, rgba(195, 160, 74, 0.05) 0deg 1.2deg, transparent 1.2deg 15deg);
+  border-radius: 50%;
+  mask-image: radial-gradient(circle at center, black 0%, transparent 68%);
 }
 
 .hero-inner { max-width: 640px; z-index: 2; }
@@ -868,6 +899,40 @@ ul { list-style: none; }
 }
 
 .card-link:hover { color: var(--gold-bright); border-color: var(--gold); }
+
+/* ADDITIONAL SECTION WATERMARKS */
+#skills { position: relative; overflow: hidden; }
+
+#skills::before {
+  content: '';
+  position: absolute;
+  bottom: -10%;
+  left: -6%;
+  width: 40%;
+  height: 60%;
+  opacity: 0.05;
+  pointer-events: none;
+  background-image:
+    repeating-linear-gradient(0deg, var(--gold) 0 1px, transparent 1px 30px),
+    repeating-linear-gradient(90deg, var(--gold) 0 1px, transparent 1px 30px);
+  mask-image: radial-gradient(circle at 20% 80%, black 0%, transparent 70%);
+}
+
+.contact-section { position: relative; overflow: hidden; }
+
+.contact-section::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -8%;
+  width: 480px;
+  height: 480px;
+  opacity: 0.06;
+  pointer-events: none;
+  background-image: repeating-radial-gradient(circle at center, var(--gold) 0 1px, transparent 1px 40px);
+  border-radius: 50%;
+  mask-image: radial-gradient(circle at center, black 0%, transparent 70%);
+}
 
 /* FOOTER LAUREL */
 .footer { display: flex; flex-direction: column; align-items: center; gap: 10px; }
